@@ -1,0 +1,14 @@
+- name: variables to print
+  hosts: web
+  vars:
+    name: "Shanmukh from PLAY level"
+    age: "25"
+    location: "India"
+  tasks: 
+  - name: print the information
+  vars:
+    name: "Shanmukh from TASK level"
+    age: "25"
+    location: "India"
+    ansible.builtin.debug:
+      msg: "Hi, my name is {{ name }} and I am {{ age }} years old and I live in {{ location }}."
