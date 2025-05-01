@@ -1,7 +1,7 @@
 - name: variables to print
   hosts: web
   vars:
-    name: "DevOps with AWS"
+    name: "Shanmukh"
     age: "25"
     location: "India"
   tasks: 
