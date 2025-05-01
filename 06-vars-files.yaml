@@ -1,9 +1,9 @@
 - name: variables from files
   hosts: web
   vars_files:
-    - vars.yaml
+   - vars.yaml
   
   tasks:
   - name: print the information
     ansible.builtin.debug:
-    msg: "Hi, my name is {{ name }} and I am {{ age }} years old and I live in {{ location }}."
+     msg: "Hi, my name is {{ name }} and I am {{ age }} years old and I live in {{ location }}."
