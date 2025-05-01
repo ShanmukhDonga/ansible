@@ -6,3 +6,11 @@
     ansible.builtin.package: #heterogeneous package manager
       name: nginx
       state: present
+
+  - name: start nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: true #enable on boot
+
+ 
