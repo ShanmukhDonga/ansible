@@ -1,4 +1,4 @@
-- name: devops cousre information
+- name: variables from files
   hosts: local
   connection: local # local connection
   vars:
