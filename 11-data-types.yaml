@@ -2,22 +2,36 @@
   hosts: local
   connection: local # local connection
   vars:
-   cousre: "Devops with AWS" # string
-   duration: 120 # integer
-   topics: #list
-      - "AWS"
-      - "Terraform"
-      - "Ansible"
-      - "Docker"
-   live: true # boolean
-   tools: # dictionary
-      AWS: "Cloud"
-      Terraform: "IaC"
-      Ansible: "Automation"
-      Docker: "Containerization" 
+   name: "Shanmukh from files"
+   age: "25"
+  location: "India"
+  topics: #list
+    - Linux
+    - Ansible
+    - Terraform 
+    - AWS
+  live: true
+  tools:
+    - name: "AWS"
+      version: "2023"
+      type: "cloud"
+    - name: "Terraform"
+      version: "2023"
+      type: "cloud"
+    - name: "Ansible"
+      version: "2023"
+      type: "automation"
   tasks:
-  - name: Print course information
-  ansible.builtin.debug:
-      msg: "Hi, I am learning {{ cousre }} for {{ duration }} hours. The topics I will learn are {{ topics }}. Is it live? {{ live }}. The tools I will learn are {{ tools }}."
-    debug:
-          
+    - name: print the information
+      ansible.builtin.debug:
+        msg: "Hi, my name is {{ name }} and I am {{ age }} years old and I live in {{ location }}."
+    - name: print the topics
+      ansible.builtin.debug:
+        msg: "The topics are {{ topics }}"
+    - name: print the tools
+      ansible.builtin.debug:
+        msg: "The tools are {{ tools }}"
+    - name: print the tools version
+      ansible.builtin.debug:
+        msg: "The tools version is {{ item.version }}"
+      loop: "{{ tools }}"
